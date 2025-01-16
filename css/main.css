@@ -1,0 +1,593 @@
+:root {
+  --color-blue-medium: #8fe2e4;
+  --color-purple: #632ce7;
+  --color-purple-hover: #500ded;
+  --color-gray: #ccc;
+  --color-gray-medium: #f8f9fa;
+  --color-yellow: #fac32c;
+  --bg-crema-calido: #faf3e0;
+  --bg-crema-melaza: #f5e6d3;
+  --bg-crema-matiz-rosa: #f9e8d8;
+  --bg-crema-claro: #fff5e1;
+  --text-color: #1a1c20;
+  --link-color: #ffffff;
+  --background-color: #eeeff1;
+  --font-size: 17px; /* tamaño base */
+  --h2: 2.75rem;
+  --h3: 1.5rem;
+  --h5: 1.2rem;
+  --h6: 1.3rem;
+  --p: 1.25rem;
+  --a: 1.1rem;
+  --fw: 400;
+  --font-dancing: "Dancing Script", serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-patrick: "Patrick Hand", serif;
+}
+
+/* ------ GENERAL STYLE ------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav > a {
+  color: inherit; /* color del padre */
+}
+
+.container > .row {
+  margin-bottom: 3rem;
+}
+
+@font-face {
+  font-family: "Steph";
+  src: url("/fonts/steph-font.ttf");
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Steph", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+footer {
+  /* útil para headers, footers o barras laterales que deben mantener un tamaño. */
+  flex-shrink: 0; /* no se comprime */
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+#secService h2,
+#secQuienSoy h2,
+#secPortfolio h2,
+#secPerifericos h2,
+#secCursos h2 {
+  font-size: var(--h2);
+  font-family: var(--font-patrick);
+  font-weight: var(--fw);
+}
+
+#secService h3 {
+  font-family: var(--font-patrick);
+  font-weight: var(--fw);
+  font-size: var(--h3);
+}
+
+#secService p,
+#secQuienSoy p {
+  font-size: var(--p);
+  line-height: 1.5;
+  font-family: var(--font-patrick);
+  font-weight: var(--fw);
+}
+
+#secService a,
+#secQuienSoy a,
+#secPerifericos a,
+#secCursos a {
+  font-size: var(--a);
+  font-weight: 500;
+}
+
+#secPerifericos h5,
+#secCursos h5 {
+  font-family: var(--font-patrick);
+  font-size: var(--h5);
+  font-weight: var(--fw);
+}
+
+#secPerifericos p,
+#secCursos p {
+  font-size: var(--p);
+  line-height: 1.5;
+  font-family: var(--font-patrick);
+  font-weight: var(--fw);
+}
+
+#secCursos h6 {
+  font-size: var(--h6);
+  font-weight: 600;
+}
+/* ------ SECTIONS ------*/
+/* ------> Nav */
+.navbar {
+  background-color: #e6e9ee;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3.125rem;
+  height: 5rem;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.navbar-brand > img {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+  transition: all 0.3s ease;
+}
+
+.navbar-brand > img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.navbar .left {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 11rem;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+}
+
+.nav-link {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: font-weight 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  font-weight: 600;
+}
+
+.nav-link.active {
+  text-decoration: underline wavy var(--color-purple);
+  text-underline-offset: 9px; /* separar un poco el underline */
+}
+
+/* Section Heading Styles */
+section h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background-color: var(--color-purple);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* ------> Header */
+.header-main h2 {
+  font-size: var(--h2);
+  font-weight: 700;
+  background: -webkit-linear-gradient(0deg, #8e44ad, #3498db, #2ecc71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-main p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--text-color);
+}
+
+.icons-social-networks > a {
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: filter 0.5s;
+  text-decoration: none;
+  padding: 0;
+  margin: 0 0.75rem;
+}
+
+.icons-social-networks > a,
+.sec-clients > a {
+  transition: transform 0.3s, filter 0.5s;
+}
+.icons-social-networks > a:hover,
+.sec-clients > a:hover {
+  transform: scale(1.1);
+  filter: opacity(0.5);
+}
+
+.bg-facebook {
+  background-color: #023693;
+}
+
+.bg-twitter {
+  background-color: #33a9f3;
+}
+
+.bg-dribbble {
+  background-color: #f1066b;
+}
+
+.photo-frame {
+  font-size: 20px;
+  position: relative;
+}
+
+.header-main .photo-frame img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  transition: transform 0.4s ease;
+}
+
+.header-main .photo-frame img:hover {
+  transform: scale(1.1);
+}
+
+.photo-frame::before,
+.photo-frame::after {
+  content: "";
+  display: block;
+  width: var(--box-size);
+  height: var(--box-size);
+  position: absolute;
+  z-index: -10;
+  animation: turnZ 7s linear alternate-reverse infinite;
+}
+
+.photo-frame::before {
+  --box-size: 3em;
+  background-image: radial-gradient(
+    var(--color-blue-medium) 50%,
+    var(--color-purple) 50%
+  );
+  top: calc(99% - (var(--box-size) / 2));
+  right: calc(99% - (var(--box-size) / 2));
+}
+
+.photo-frame::after {
+  --box-size: 5em;
+  bottom: calc(98% - (var(--box-size) / 2));
+  left: calc(98% - (var(--box-size) / 2));
+  background: linear-gradient(
+      45deg,
+      var(--color-gray-medium) 45%,
+      transparent 45%
+    ),
+    radial-gradient(
+      var(--color-purple) 30%,
+      var(--color-yellow) 30% 70%,
+      var(--color-gray-medium) 70%,
+      transparent 70%
+    );
+}
+
+@keyframes turnZ {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.header-main {
+  min-height: 100vh;
+  margin-top: 55px;
+}
+
+/* ------> Service */
+.icon-services {
+  --box-size: 70px;
+  width: var(--box-size);
+  height: var(--box-size);
+  padding: 10px;
+}
+
+/* ------> Portfolio */
+.portfolio-item > img {
+  transition: transform 0.4s;
+}
+
+.portfolio-item:hover > img {
+  transform: scale(0.96);
+}
+
+/* ------> Periféricos y Cursos */
+#secService article,
+#secPerifericos article,
+#secCursos article,
+#secContact div {
+  background-color: var(--color-gray-medium);
+}
+
+#secPerifericos h2,
+#secCursos h2 {
+  color: var(--color-purple);
+  font-weight: bold;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#secPerifericos h2::after,
+#secCursos h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--color-purple),
+    var(--color-blue-medium)
+  );
+}
+
+#secPerifericos .card,
+#secCursos .card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 20px rgba(99, 44, 231, 0.1);
+  margin-top: 10px;
+}
+
+#secPerifericos .card:hover,
+#secCursos .card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 30px rgba(99, 44, 231, 0.2);
+}
+
+#secPerifericos .card-img-top,
+#secCursos .card-img-top {
+  height: 250px;
+  object-fit: contain;
+  transition: all 0.5s ease;
+}
+
+#secPerifericos .card:hover .card-img-top,
+#secCursos .card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+#secPerifericos .card-body,
+#secCursos .card-body {
+  padding: 1.5rem;
+  background: white;
+}
+
+#secPerifericos .card-title,
+#secCursos .card-title {
+  color: var(--color-purple);
+  font-weight: 600;
+}
+
+#secPerifericos .card:hover .card-title,
+#secCursos .card:hover .card-title {
+  color: var(--color-purple-hover);
+  font-weight: 700;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+#secPerifericos .card-subtitle,
+#secCursos .card-subtitle {
+  color: var(--color-blue-medium);
+}
+
+#secPerifericos .btn,
+#secCursos .btn {
+  background-color: var(--color-purple);
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#secPerifericos .btn::before,
+#secCursos .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.4s ease;
+}
+
+#secPerifericos .btn:hover::before,
+#secCursos .btn:hover::before {
+  left: 100%;
+}
+
+#secPerifericos .btn:hover,
+#secCursos .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(99, 44, 231, 0.3);
+}
+
+/* Efectos adicionales de gradiente */
+#secPerifericos .card,
+#secCursos .card {
+  position: relative;
+}
+
+#secPerifericos .card::after,
+#secCursos .card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(
+    to right,
+    var(--color-purple),
+    var(--color-blue-medium)
+  );
+}
+
+/* ------> Contact */
+#secContact p {
+  font-size: 1.25rem;
+  color: #555;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+#secContact a {
+  font-family: var(--font-patrick);
+  font-size: var(--h3);
+  font-weight: var(--fw);
+  transition: color 0.3s ease-in-out;
+}
+
+#secContact a:hover {
+  color: var(--color-purple-hover);
+}
+
+/* ------> Footer */
+footer {
+  background-color: #a0a5ab;
+  color: #fff;
+  font-size: var(--p);
+  margin-bottom: 0 !important;
+  padding-bottom: 1rem;
+
+  /* Nuevos estilos */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 2px solid #632ce7; /* Usando el morado de tu gradiente */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 5%;
+
+  /* Efecto de glassmorphism */
+  background: rgba(160, 165, 171, 0.8);
+  backdrop-filter: blur(10px);
+
+  /* Animación sutil */
+  transition: all 0.3s ease;
+}
+
+/* Estilos para los elementos dentro del footer */
+footer > * {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Efecto hover sutil */
+footer:hover {
+  background: rgba(160, 165, 171, 0.9);
+}
+
+/* Responsive */
+@media screen and (max-width: 376px) {
+  body {
+    margin-top: 4rem;
+  }
+
+  .header-main {
+    height: initial; /* el alto que definan sus hijos */
+  }
+
+  .photo-frame {
+    font-size: 11px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espacio entre logo y nombre */
+  }
+
+  .navbar .left {
+    position: static;
+    margin-left: 1rem;
+    display: inline-block;
+    font-size: 1.3rem;
+  }
+
+  .navbar-toggler {
+    order: 3; /* Mueve el botón hamburguesa al final */
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%; /* Justo debajo del navbar */
+    left: 60%;
+    width: 100%;
+    background-color: #e6e9ee;
+    z-index: 1000;
+  }
+}
+
+@media (max-width: 768px) {
+  #perifericos .card,
+  #cursos .card {
+    margin-bottom: 2rem;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
